@@ -1,0 +1,102 @@
+<div class="active fade p-md-4 show tab-pane" id="nav-home" role="tabpanel"
+  aria-labelledby="nav-home-tab">
+  <div class="aside-header">
+    <span class="font-weight-bold text-gray-800 title">Customize Website</span>
+    <p class="description">Customize My Entire Website</p>
+  </div>
+  <div class="form border rounded p-3">
+    <h6 class="text-center"><mark class="alert-primary">Hero Section</mark></h6>
+    <div class="form-group">
+      <label class="control-label">Site Title:</label>
+      <div class="form-group">
+        <div class="input-group mb-3">
+          <input data-status="false" data-pop="<%- site.titleHero -%>" data-key="titleHero" type="text"
+            class="form-control" oninput="inputChange(event)" value="<%- site.titleHero -%>">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label">Sub-Title Hero:</label>
+      <div class="form-group">
+        <div class="input-group mb-3">
+          <textarea data-status="false" data-pop="<%- site.subTitleHero -%>" data-key="subTitleHero"
+            class="form-control" id="subTitle-hero" rows="3"
+            oninput="inputChange(event)"><%- site.subTitleHero -%></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form border rounded p-3 my-2">
+    <h6 class="text-center"><mark class="alert-primary">Quote Section</mark></h6>
+    <div class="form-group">
+      <label class="control-label">Author Quote:</label>
+      <div class="form-group">
+        <div class="input-group mb-3">
+          <input data-status="false" data-pop="<%- site.authQuote -%>" data-key="authQuote" type="text"
+            class="form-control" oninput="inputChange(event)" value="<%- site.authQuote -%>">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label">Body Quote:</label>
+      <div class="form-group">
+        <div class="input-group mb-3">
+          <textarea data-status="false" data-pop="<%- site.bodyQuote -%>" data-key="bodyQuote"
+            class="form-control" id="subTitle-hero" rows="3"
+            oninput="inputChange(event)"><%- site.bodyQuote -%></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form border rounded p-3 my-2">
+    <h6 class="text-center"><mark class="alert-primary">Contact Section</mark></h6>
+    <div class="form-group">
+      <label class="control-label">Contact Phone:</label>
+      <div class="form-group">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">00</span>
+          </div>
+          <input data-status="false" data-pop="<%- site.phone -%>" data-key="phone" type="number"
+            class="form-control" oninput="inputChange(event)" value="<%- site.phone -%>">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label">Contact Email:</label>
+      <div class="form-group">
+        <div class="input-group mb-3">
+          <input data-status="false" data-pop="<%- site.email -%>" data-key="email" type="text"
+            class="form-control" oninput="inputChange(event)" value="<%- site.email -%>">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label">Contact Address:</label>
+      <div class="form-group">
+        <div class="input-group mb-3">
+          <input data-status="false" data-pop="<%- site.baseAdd -%>" data-key="baseAdd" type="text"
+            class="form-control" oninput="inputChange(event)" value="<%- site.baseAdd -%>">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label">Contact City:</label>
+      <div class="form-group">
+        <div class="input-group mb-3">
+          <input data-status="false" data-pop="<%- site.cityAdd -%>" data-key="cityAdd" type="text"
+            class="form-control" oninput="inputChange(event)" value="<%- site.cityAdd -%>">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label">Contact Country:</label>
+      <div class="form-group">
+        <div class="input-group mb-3">
+          <input data-status="false" data-pop="<%- site.countryAdd -%>" data-key="countryAdd" type="text"
+            class="form-control" oninput="inputChange(event)" value="<%- site.countryAdd -%>">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

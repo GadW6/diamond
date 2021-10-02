@@ -1,0 +1,43 @@
+<section class="content inbox">       
+    <div class="row clearfix">
+        <div class="col-md-12 col-lg-12 col-xl-12">
+            <div class="card m-t-5 py-2">
+                <div class="body d-flex justify-content-between">
+                    <ul class="pagination pagination-primary m-b-0 d-none">
+                        <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                        <li class="page-item active"><a class="page-link" href="javascript:void(0);">2</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
+                    </ul>
+                    <span class="ml-auto p-2">
+                        Total Mails: <%- mails.length -%>
+                    </span>
+                </div>
+            </div>
+            <ul class="mail_list list-group list-unstyled">
+                <% mails.forEach((oneMail, index) => { %>
+                <li class="list-group-item <%- !oneMail.read && 'unread' -%>">
+                    <a class="media" href="/admin/messages/<%- oneMail._id -%>">
+                        <div class="media-body">
+                            <div class="media-heading">
+                                <aside class="d-inline">
+                                    <h6 class="m-r-10 d-inline text-primary"><%- oneMail.name -%></h6>
+                                    <span class="badge bg-blue d-inline">Work</span>
+                                </aside>
+                                <small class="float-right text-muted d-inline">
+                                    <time class="hidden-sm-down">
+                                    <%- ((oneMail._receivedAt.getHours() < 10) ? ('0' + oneMail._receivedAt.getHours()) : oneMail._receivedAt.getHours()) + ':' + ((oneMail._receivedAt.getMinutes() < 10) ? ('0' + oneMail._receivedAt.getMinutes()) : oneMail._receivedAt.getMinutes()) + '\xa0\xa0\xa0' + oneMail._receivedAt.getDate() + '/' + (oneMail._receivedAt.getMonth() + 1) -%>
+                                    </time>
+                                    <i class="zmdi zmdi-attachment-alt"></i> 
+                                </small>
+                            </div>
+                            <p class="msg mb-0"><%- (oneMail.body.length > 40) ? oneMail.body.substring(0, 40) + ' ...' : oneMail.body -%></p>
+                        </div>
+                    </a>
+                </li>
+                <% }) %>
+            </ul>
+        </div>
+    </div>
+</section>

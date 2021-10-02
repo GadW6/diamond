@@ -1,0 +1,44 @@
+[
+  {
+    "name": "DefaultLogger",
+    "filename": "default",
+    "path": "/default",
+    "rotateSize": 250
+  },
+  {
+    "name": "LoginLogger",
+    "filename": "login",
+    "path": "/login",
+    "rotateSize": 250
+  },
+  {
+    "name": "RouterLogger",
+    "filename": "router",
+    "path": "/router",
+    "rotateSize": 250
+  },
+  {
+    "name": "ContentLogger",
+    "filename": "content",
+    "path": "/content",
+    "rotateSize": 250
+  },
+  {
+    "name": "GalleryLogger",
+    "filename": "gallery",
+    "path": "/gallery",
+    "rotateSize": 250
+  },
+  {
+    "name": "MessageLogger",
+    "filename": "message",
+    "path": "/message",
+    "rotateSize": 250
+  },
+  {
+    "name": "UserLogger",
+    "filename": "user",
+    "path": "/user",
+    "rotateSize": 250
+  }
+]

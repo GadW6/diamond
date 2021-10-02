@@ -1,0 +1,63 @@
+<%- include('../includes/head') -%>
+<link rel="stylesheet" href="../css/gallery.css">
+</head>
+
+<body>
+  <div id="myNav" class="hidden">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="hidden-content">
+      <a href="/" onclick="closeNav()">Home</a>
+      <a href="./gallery" onclick="closeNav()">gallery</a>
+      <a href="/#about" onclick="closeNav()">About</a>
+      <a href="/#contact" onclick="closeNav()">Contact</a>
+    </div>
+  </div>
+  <span id="burger" onclick="openNav()">&#9776;</span>
+  <div class="container container_navigation">
+    <nav class="navigation d-flex justify-content-between">
+      <a class="logo" href="/"><strong>YW | Diamonds</strong></a>
+      <ul class="pr-5 text-nowrap">
+        <li><a id="active" href="/">home</a></li>
+        <li><a href="./gallery">gallery</a></li>
+        <li><a href="/#about">about</a></li>
+        <li><a href="/#contact">contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container container_gallery px-0">
+    <h3 class="display-4 text-center mt-4">Gallery</h3>
+
+    <div class="gallery my-5">
+      <div class="carousel">
+        <div class="row mx-0">
+          <% pictures.forEach(i => { %>
+          <figure class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-0 mb-0 d-inline-block">
+            <a href="./img/img-gallery/<%- i %>">
+              <img src="./img/img-gallery/<%- i %>" alt="picture" class="img-fluid">
+            </a>
+          </figure>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+
+    <a href="/" class="btn btn-outline back btn-lg mt-5">back to home</a>
+
+    <span class="d-block" style="height: 1px; background-color: #FF0000; margin-top: 70px;"></span>
+    <footer class="py-4">
+      <div class="container d-flex justify-content-between px-0" style="color: #c2c2c2;">
+        <a class="logo d-inline-block" href="#"><strong>YW |
+            Diamonds</strong></a>
+        <p class="d-inline-block my-0 mx-3" id="copyright"><small>Copyright &copy; <span id="year_now"></span>
+            <a class="text-danger" href="http://itcloudpro.com">ITGLOBE</a>. All rights
+            Reserved.</small></p>
+        <div class="right-footer">
+          <a href="/terms" class="mr-3">Terms &
+            Conditions</a>
+          <a href="/privacy">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <%- include('../includes/foot') -%>

@@ -1,0 +1,72 @@
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/portal">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-gem"></i>
+        </div>
+        <div class="sidebar-brand-text mx-2">Admin Portal</div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item <%- (page === 'portal') ? 'active' : '' -%>">
+        <a class="nav-link" href="/admin/portal">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+    
+    <div class="sidebar-heading">
+        Actions
+    </div>
+    
+    <% table.filter(e => e.perm === true).forEach(e => { %>
+        <% if (e.children && e.children.length > 0) { %>
+            <li class="nav-item <%- (page === e.href) ? 'active' : '' -%>">
+                <a class="nav-link collapsed" onclick="collapsed(event)"
+                    aria-expanded="false">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span><%- e.title -%></span>
+                    <i class="fas fa-chevron-right float-right p-2 mr-2"></i>
+                </a>
+                <div id="<%- e.href -%>" class="collapse hide">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header"><%- e.subTitle -%>:</h6>
+                        <% e.children.forEach(sub => { %>
+                            <a class="collapse-item" href="<%- '/admin/' + e.href + '/' + sub.href -%>"><%- sub.title -%></a>
+                        <% }) %>
+                    </div>
+                </div>
+            </li>
+        <% } else { %>
+            <li class="nav-item <%- (page === e.href) ? 'active' : '' -%>">
+                <a class="nav-link" href="/admin/<%- e.href -%>">
+                    <i class="<%- e.icon -%>"></i>
+                    <span><%- e.title -%></span>
+                </a>
+            </li>
+        <% } %>    
+    <% }) %>
+
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle">
+            <i class="fas fa-angle-left text-gray-300"></i>
+        </button>
+    </div>
+
+    <!-- Sidebar Message -->
+    <div class="sidebar-card mt-5">
+        <i class="fas fa-undo-alt h2"></i>
+        <a class="btn btn-success btn-sm" href="/">Return To Webiste</a>
+    </div> 
+</ul>

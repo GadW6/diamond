@@ -1,0 +1,118 @@
+  <div class="m-md-2">
+    <!-- <h1 class="text-center border-bottom pb-3 display-4 mx-auto mb-0"><%- pageTitle -%></h1> -->
+    <div class="aside-header">
+      <span class="font-weight-bold text-gray-800 title"><%- pageTitle -%></span>
+    </div>
+
+    <div class="mt-5 w-50 mx-auto">
+      <form class="form-group d-none mb-0" id="add-img-form" action="/admin/gallery" method="POST"
+        enctype="multipart/form-data">
+        <h5 class="text-center">Form requirements:</h5>
+        <p class="text-center small text-danger">- All fields must be filled out<br>
+          - Accepted formats [JPG, JPEG, PNG]<br>- Max file size: 5mb</p>
+        <div class="input-group mb-1">
+          <div class="custom-file d-block w-100 mb-2">
+            <input type="file" accept="image/png, image/jpeg" class="custom-file-input" id="uploadImg" name="uploadImg"
+              onchange="upImg(event)">
+            <label id="uploadImgLabel" class="custom-file-label" for="uploadImg">Upload Image</label>
+          </div>
+          <div class="custom-file d-block w-100 mb-2">
+            <label class="col-form-label d-none" for="input-title">Input Title</label>
+            <input type="text" class="form-control" placeholder="Title" id="input-title" name="input-title">
+          </div>
+          <div class="custom-file d-block w-100 h-100 mb-2">
+            <label class="col-form-label d-none" for="input-description">Input Description</label>
+            <textarea class="form-control" id="input-description" name="input-description" rows="3"
+              placeholder="Description"></textarea>
+          </div>
+        </div>
+        <div class="d-block text-center">
+          <button class="bg-transparent btn btn-dark text-dark" type="submit" onclick="uploadValid(event)">add</button>
+          <button id="btnCancelAddPic" class="bg-transparent btn text-dark"
+            onclick="cancelAddPic(event)">cancel</button>
+        </div>
+      </form>
+      <button class="mx-auto d-block bg-transparent btn btn-dark text-dark" id="add-img-btn"
+        onclick="openImageForm()">Add
+        Image<i class="fa fa-plus ml-2"></i></button>
+    </div>
+
+    <table class="table table-hover" style="margin: 8vh 0 20vh;">
+      <thead>
+        <tr class="table-secondary table-active">
+          <th colspan="1" scope="col">#</th>
+          <th colspan="1" scope="col">Title</th>
+          <th colspan="1" scope="col" style="width: 55%;">Description</th>
+          <th colspan="1" scope="col"></th>
+        </tr>
+      </thead>
+
+      <!-- Group Title -->
+      <thead>
+        <tr class="table-transparent">
+          <th class="text-center" colspan="4">Ungrouped Pictures</th>
+        </tr>
+      </thead>
+
+
+      <tbody>
+        <% pictures.forEach((row, index) => { %>
+        <tr id="<%- row.id -%>">
+          <td><%- index + 1 -%></td>
+          <td><%- row.name -%></td>
+          <td><%- row.description -%></td>
+          <td class="input-group px-0 py-1">
+            <div class="input-group-append ml-auto">
+              <button class="btn btn-outline-secondary" href="../img/img-gallery/<%- row.href -%>">View</button>
+              <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu" style="width: 200px;">
+                <a class="dropdown-item" href="../img/img-gallery/<%- row.href -%>">
+                  <p class="d-inline-block my-1">Full-screen</p>
+                  <i class="fa fa-external-link-square float-right my-2 d-inline-block"></i>
+                </a>
+                <a class="dropdown-item modify-row modifyP" href="#">
+                  <p class="d-inline-block my-1 modifyC">Modify</p>
+                  <i class="fa fa-pencil float-right my-2 d-inline-block modifyC"></i>
+                </a>
+                <div role="separator" class="dropdown-divider"></div>
+                <a class="dropdown-item text-danger" href="#" data-toggle="modal" data-target="#removePicture"
+                  onclick="openModal('<%- row.id -%>')">
+                  <p class="d-inline-block my-1 text-danger">Delete</p>
+                  <i class="fa fa-times text-danger float-right my-2 d-inline-block"></i>
+                </a>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+
+    <!-- <div class="modal" tabindex="-1" style="background-color: #343a4080;">
+      <div class="modal-dialog m-auto">
+        <div class="modal-content p-3">
+          <div class="modal-header">
+            <h5 class="modal-title">Are you sure ?</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>You are about to remove the image and all it's metadata. No recovery possible passed this point !</p>
+          </div>
+          <div class="modal-footer justify-content-around">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+              onclick="closeModal()">Close</button>
+            <button type="button" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
+    <div id="img-display" class="d-none"><img src="" height="300px" width="400px" alt="dyanmic img">
+    </div>
+  </div>

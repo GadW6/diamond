@@ -1,0 +1,12 @@
+<div id="terms">
+  <h1><%- site.termsTitle -%></h1>
+  <% site.termsBody.forEach(section => { %>
+  <section>
+    <h3>
+      <i class="fas fa-circle"></i>
+      <span><%- section.sub -%></span>
+    </h3>
+    <p><%- section.para -%></p>
+  </section>
+  <% }) %>
+</div>

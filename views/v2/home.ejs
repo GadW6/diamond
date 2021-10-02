@@ -1,0 +1,10 @@
+<!-- Main -->
+<div id="main">
+  <% images.forEach(image => { %>
+    <article class="thumb">
+      <a href="/img/img-gallery/<%- image.href -%>" class="image"><img src="/img/img-gallery/<%- image.href -%>" alt="" /></a>
+      <h2><%- image.name -%></h2>
+      <p><%- image.description -%></p>
+    </article>
+  <% }) %>
+</div>

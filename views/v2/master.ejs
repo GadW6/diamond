@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>YW | <%- title -%></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    	<link rel="shortcut icon" href="/img/icon-diamond.png" type="image/x-icon">
+		<link rel="stylesheet" href="assets/css/style.css" />
+		<link rel="stylesheet" href="assets/css/second.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			body::-webkit-scrollbar {
+				width: 1vw;
+				background-color: #1f2224;
+			}
+			body::-webkit-scrollbar-thumb {
+				border: 0.35vw solid rgba(0, 0, 0, 0);
+				background-clip: padding-box;
+				border-radius: 25px;
+				-webkit-border-radius: 25px;
+				background-color: rgba(255, 255, 255, 0.25);
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+
+					<%- include('./nav') -%>
+
+
+					<%- include('./' + title.toLowerCase()) -%>
+
+
+					<%- include('./footer') -%>
+
+				
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<% if (title === 'Home' || title === 'Terms' || title === 'Privacy') { %>
+				<script src="assets/js/form.js"></script>
+			<% } %>
+
+	</body>
+</html>

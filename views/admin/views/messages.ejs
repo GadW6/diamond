@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-lg-3 email-aside border-lg-right">
+    <%- (typeof slots !== 'undefined' && slots.includes('sidebar')) ? include('../includes/messages/sidebar') : null -%>
+  </div>
+  <div class="col-lg-9 email-content mt-3">
+    <%- (typeof slots !== 'undefined' && slots.includes('table')) ? include('../includes/messages/table') : null -%>
+    <%- (typeof slots !== 'undefined' && slots.includes('read')) ? include('../includes/messages/read') : null -%>
+  </div>
+</div>

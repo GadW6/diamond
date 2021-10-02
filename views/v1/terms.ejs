@@ -1,0 +1,68 @@
+<%- include('../includes/head') -%>
+<link rel="stylesheet" href="../css/gallery.css">
+<style>
+  div.container section {
+    margin: 5vh 0;
+  }
+
+  div.container section h3 i.fa-circle {
+    font-size: 0.8rem;
+    line-height: 2.3rem;
+  }
+
+</style>
+</head>
+
+<body>
+  <div id="myNav" class="hidden">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="hidden-content">
+      <a href="/" onclick="closeNav()">Home</a>
+      <a href="./gallery" onclick="closeNav()">gallery</a>
+      <a href="/#about" onclick="closeNav()">About</a>
+      <a href="/#contact" onclick="closeNav()">Contact</a>
+    </div>
+  </div>
+  <span id="burger" onclick="openNav()">&#9776;</span>
+  <div class="container container_navigation">
+    <nav class="navigation d-flex justify-content-between">
+      <a class="logo" href="/"><strong>YW | Diamonds</strong></a>
+      <ul class="pr-5 text-nowrap">
+        <li><a id="active" href="/">home</a></li>
+        <li><a href="./gallery">gallery</a></li>
+        <li><a href="/#about">about</a></li>
+        <li><a href="/#contact">contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container p-4">
+    <div class="p-4 m-4">
+      <h1 class="text-center display-4" style="margin-bottom: 7vh;"><%- siteTitle -%></h1>
+      <% site.forEach(section => { %>
+      <section style="margin: 5vh 0">
+        <h3 class="mb-3">
+          <i class="fas fa-circle mr-3 d-inline-block position-absolute"></i>
+          <span class="d-inline-block position-relative ml-4"><%- section.sub -%></span>
+        </h3>
+        <p><%- section.para -%></p>
+      </section>
+      <% }) %>
+    </div>
+    <span class="d-block" style="height: 1px; background-color: #FF0000; margin-top: 70px;"></span>
+    <footer class="py-4">
+      <div class="container d-flex justify-content-between px-0" style="color: #c2c2c2;">
+        <a class="logo d-inline-block" href="#"><strong>YW |
+            Diamonds</strong></a>
+        <p class="d-inline-block my-0 mx-3" id="copyright"><small>Copyright &copy; <span id="year_now"></span>
+            <a class="text-danger" href="http://itcloudpro.com">ITGLOBE</a>. All rights
+            Reserved.</small></p>
+        <div class="right-footer">
+          <a href="/terms" class="mr-3">Terms &
+            Conditions</a>
+          <a href="/privacy">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <%- include('../includes/foot') -%>

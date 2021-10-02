@@ -1,0 +1,35 @@
+<!-- Popup Modal Component -->
+<div id="<%- tag -%>" class="modal fade row m-0 p-0">
+	<div class="modal-dialog modal-confirm col-12">
+		<div class="modal-content">
+			<div class="modal-header flex-column">
+				<div class="icon-box border border-<%- severity -%>">
+					<% if(severity === 'danger'){ %>
+					<i class="fas fa-exclamation text-<%- severity -%>"></i>
+					<% } else if (severity === 'info') { %>
+					<i class="fas fa-question text-<%- severity -%>"></i>
+					<% } else if (severity === 'success') { %>
+					<i class="fas fa-check text-<%- severity -%>"></i>
+					<% } %>
+				</div>
+				<h4 class="modal-title w-100"><%- title -%></h4>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			</div>
+			<% if(msg) { %>
+				<div class="modal-body">
+					<p><%- msg -%></p>
+				</div>
+			<% } %>
+			<div class="modal-footer justify-content-center">
+				<% if(dismiss) { %>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+				<% } %>
+				<% if(action.xhrStatus) { %>
+					<button type="button" class="btn btn-<%- severity -%> text-light" onclick="MyStore.modalAction('<%- action.link -%>', '<%- action.method -%>', '<%- action.after -%>')"><%- btnTitle -%></button>
+				<% } else { %>
+					<button type="button" class="btn btn-<%- severity -%> text-light" onclick="window.location.href='<%- action.link -%>'"><%- btnTitle -%></button>
+				<% } %>
+			</div>
+		</div>
+	</div>
+</div>

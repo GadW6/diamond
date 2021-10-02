@@ -1,0 +1,30 @@
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="/js/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="/js/chart-js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/js/demo/chart-area-demo.js"></script>
+    <script src="/js/demo/chart-pie-demo.js"></script>
+
+    <!-- Global Scope Custom JS -->
+    <script type="module" src="/js/store/MyStore.js"></script>
+    <script src="/js/admin/global.js"></script>
+
+    <!-- Custom JS for routes -->
+    <% if(typeof page !== 'undefined' && isAssetExists(page, 'js')) { %> 
+        <script src="/js/admin/<%- `${page}/${page}` -%>.js"></script>
+    <% } %>
+    <% if (typeof slots !== 'undefined' && slots.length > 0 && typeof page !== 'undefined') slots.forEach(slot => { %>
+    <%- (isAssetExists(slot, 'js', page)) ? `<script src="/js/admin/${page}/${slot}.js"></script>` : '' -%>
+    <% }) %>
+</body>
+
+</html>

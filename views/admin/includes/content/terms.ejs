@@ -1,0 +1,73 @@
+<div class="fade p-md-4 show tab-pane" id="nav-terms" role="tabpanel"
+  aria-labelledby="nav-terms-tab">
+  <div class="aside-header">
+    <span class="font-weight-bold text-gray-800 title">Customize Website</span>
+    <p class="description">Customize My Entire Terms Policy Page</p>
+  </div>
+  <div class="btn-separator" id="btn-separator-terms">
+    <div class="form border rounded p-3 mb-2">
+      <h6 class="text-center"><mark class="alert-primary">Main Section</mark></h6>
+      <div class="form-group">
+        <label class="control-label">Main Title:</label>
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <input class="form-control form-control-lg" type="text" name="main-title"
+              value="<%- site.termsTitle -%>" oninput="inputChange(event)" data-status="false"
+              data-pop="<%- site.termsTitle -%>" data-key="termsTitle">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label">Sub-Title:</label>
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <input class="form-control" type="text" name="title" value="<%- termsBody[0].sub -%>"
+              oninput="inputChange(event)" data-status="false" data-pop="<%- termsBody[0].sub -%>"
+              data-key="termsBody-0-sub">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label">Paragraph:</label>
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <textarea data-status="false" data-pop="<%- termsBody[0].para -%>" data-key="termsBody-0-para"
+              class="form-control" id="subTitle-hero" rows="5"
+              oninput="inputChange(event)"><%- termsBody[0].para -%></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% termsBody.filter((el, index) => index !== 0).forEach((el, index) => { %>
+    <div class="form border rounded p-3 my-2" data-pos="termsBody-<%- index + 1 -%>">
+      <h6 class="text-center">
+        <mark class="alert-primary mr-n3">Section <%- index + 1 -%></mark>
+        <button class="float-right rounded-circle mt-n1 mr-n1" onclick="removeSection(event)"><i
+            class="fas fa-trash-alt text-danger"></i></button>
+      </h6>
+      <div class="form-group">
+        <label class="control-label">Sub-Title:</label>
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <input class="form-control" type="text" name="title" value="<%- termsBody[index + 1].sub -%>"
+              oninput="inputChange(event)" data-status="false" data-pop="<%- termsBody[index + 1].sub -%>"
+              data-key="termsBody-<%- index + 1 -%>-sub">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label">Paragraph:</label>
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <textarea data-status="false" data-pop="<%- termsBody[index + 1].para -%>"
+              data-key="termsBody-<%- index + 1 -%>-para" class="form-control" id="subTitle-hero" rows="5"
+              oninput="inputChange(event)"><%- termsBody[index + 1].para -%></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+  <button id="add-terms-section-btn" class="btn btn-outline-secondary w-100" onclick="addSection(event)">Add
+    Section</button>
+</div>

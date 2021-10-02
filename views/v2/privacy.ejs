@@ -1,0 +1,12 @@
+<div id="privacy">
+  <h1><%- site.privacyTitle -%></h1>
+  <% site.privacyBody.forEach(section => { %>
+  <section>
+    <h3>
+      <i class="fas fa-circle"></i>
+      <span><%- section.sub -%></span>
+    </h3>
+    <p><%- section.para -%></p>
+  </section>
+  <% }) %>
+</div>
