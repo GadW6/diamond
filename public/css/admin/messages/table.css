@@ -1,0 +1,25 @@
+.list-group-item {
+  -webkit-transition: border-color 200ms ease-in;
+  transition: border-color 200ms ease-in;
+  cursor: pointer;
+}
+
+.list-group-item.unread {
+  background-color: rgba(232, 62, 140, 0.12);
+}
+
+.list-group-item:hover {
+  z-index: 50000;
+  border-left-color: rgba(232, 62, 140, 0.4);
+  border-right-color: rgba(232, 62, 140, 0.4);
+}
+
+.list-group-item a {
+  text-decoration: none;
+  color: unset;
+}
+
+.list-group-item a small {
+  line-height: inherit;
+}
+/*# sourceMappingURL=table.css.map */

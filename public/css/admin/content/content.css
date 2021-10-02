@@ -1,0 +1,29 @@
+.form-control:focus {
+    box-shadow: none;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #ffffff57;
+    border-color: #dee2e6 #dee2e6 #ffffff57;
+    color: #495057 !important;
+}
+
+.tab-content>.active {
+    background-color: #ffffff57;
+}
+
+.input-group>.form-control:not(:last-child) {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+
+button.rounded-circle {
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    transition: background-color 150ms ease-in-out;
+}
+
+button.rounded-circle:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}

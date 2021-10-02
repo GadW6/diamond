@@ -1,0 +1,19 @@
+.list-group-item
+    &.unread 
+        background-color: rgba(#e83e8c, 0.12)
+
+    transition: border-color 200ms ease-in
+    cursor: pointer
+    &:hover 
+        z-index: 50000
+        border: 
+            left-color: rgba(#e83e8c, 0.4)
+            right-color: rgba(#e83e8c, 0.4)
+
+    a 
+        text-decoration: none
+        color: unset
+
+        aside 
+        small 
+            line-height: inherit
