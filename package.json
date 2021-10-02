@@ -1,0 +1,31 @@
+{
+  "name": "diamond",
+  "version": "1.0.0",
+  "description": "This is the Diamond Website  for Yair Weintraub",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "jquery": "^3.6.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.12.2",
+    "multer": "^1.4.2",
+    "sharp": "^0.27.2",
+    "validator": "^13.5.2",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.1"
+  }
+}
