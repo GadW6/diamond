@@ -1,0 +1,103 @@
+*:focus {
+  outline: none;
+}
+nav ul li a i {
+  color: #505051;
+  margin-left: 7px;
+  transition: color 250ms ease-in;
+}
+nav ul:hover li a i {
+  color: #737373;
+}
+.information {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.information ul.icons li i {
+  font-size: 1.5em;
+}
+.information ul.icons > li {
+  padding: 0 2em 0 0;
+}
+@keyframes ldio-1vvp1rn49sv {
+  0% { transform: translate(-50%,-50%) rotate(0deg); }
+  100% { transform: translate(-50%,-50%) rotate(360deg); }
+}
+.ldio-1vvp1rn49sv div {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 3px solid #34a58e;
+  border-top-color: transparent;
+  border-radius: 50%;
+}
+.ldio-1vvp1rn49sv div {
+  animation: ldio-1vvp1rn49sv 1s linear infinite;
+  top: 20px;
+  left: 20px;
+}
+.loadingio-spinner-rolling-mw05eust31m {
+  display: none;
+  width: 40px;
+  height: 40px;
+  /* display: inline-block; */
+  overflow: hidden;
+  background: none;
+}
+.ldio-1vvp1rn49sv {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+.ldio-1vvp1rn49sv div { box-sizing: content-box; }
+
+#terms, #privacy {
+  margin-top: 5vh;
+  padding: 2em;
+}
+#terms h1, #privacy h1 {
+  text-align: center;
+}
+#terms section, #privacy section {
+  margin: 5vh 0;
+}
+#terms section span, #privacy section span {
+  margin-left: 1vw;
+}
+
+@media only screen and (min-width: 1201px){
+  iframe {
+    margin-top: 3vh;
+  }
+  .loadingio-spinner-rolling-mw05eust31m {
+    margin-left: 10vw;
+  }
+}
+@media only screen and (max-width: 1200px){
+}
+@media only screen and (max-width: 600px){
+  .information {
+    flex-direction: column;
+  }
+  p.legal {
+    margin-top: 2em;
+  }
+  .loadingio-spinner-rolling-mw05eust31m {
+    margin-left: 35vw;
+    width: 30px;
+    height: 30px;
+  }
+  .ldio-1vvp1rn49sv div {
+    width: 20px;
+    height: 20px;
+    top: 15px;
+    left: 15px;
+  }
+}
+@media only screen and (max-width: 425px){
+	/*Small smartphones [325px -> 425px]*/
+}
