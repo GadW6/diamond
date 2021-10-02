@@ -1,0 +1,9 @@
+.sidebar-dark #sidebarToggle::after {
+    content: none;
+}
+.sidebar-dark.toggled #sidebarToggle::after{
+    content: none;
+}
+.sidebar-dark.toggled #sidebarToggle i {
+    transform: rotate(180deg);
+}
